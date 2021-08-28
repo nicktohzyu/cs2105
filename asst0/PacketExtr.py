@@ -3,12 +3,12 @@ import sys
 from typing import List
 
 def repeat(size: int):
-    i: int = 0
-    while i < size:
-        b = sys.stdin.buffer.read(1)
+    read: int = 0
+    while read < size:
+        b = sys.stdin.buffer.read1(size-read)
         sys.stdout.buffer.write(b)
-        i += 1
-    sys.stdout.buffer.flush()
+        sys.stdout.buffer.flush()
+        read += len(b)
 
 
 while True:
